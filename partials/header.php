@@ -20,11 +20,13 @@
         
             <ul class="navbar-nav">
                 <li class="nav-item" >
-                    <a href="#" class="nav-link">location</a>
+                    <a href="Formulaire.php" class="nav-link">location</a>
                 </li>
                 <li class="nav-item" >
                     <a href="#" class="nav-link">vente</a>
                 </li>
+
+
             </ul>
         
         </nav>

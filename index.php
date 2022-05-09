@@ -23,7 +23,7 @@ $req->closeCursor();
         
         <main class="container">
             
-            <h1 class="p-4 my-5 bg-dark text-danger text-center"> Formulaire d'inscription</h1>
+            <h1 class="p-4 my-5 bg-dark text-danger text-center"> Les bons du moments</h1>
             
             
         <table class="table table-hover text-center">
