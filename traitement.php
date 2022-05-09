@@ -1,10 +1,25 @@
 <?php
 
+
 $PDO = new PDO('mysql:host=localhost;dbname=immobilier','root','');
+$titre = $_POST['titre']; 
+$adresse = $_POST['adresse']; 
+$ville = $_POST['ville']; 
+$cp = $_POST['cp']; 
+$surface = $_POST['surface']; 
+$prix = $_POST['prix']; 
+$photo = $_POST['photo']; 
+$type = $_POST['typee']; 
+$descriptif = $_POST['descriptif'];
 
 
-//type et description  etant des mots clé donc je les'ecris autrements
-$Stat = $PDO->prepare('INSERT INTO utilisateur VALUES (NULL, :titre, :adresse, :ville, :cp, :surface, :prix, :photo,  :typee, :descriptif, )');
+
+//type et description  etant des mots clé donc je les ai'ecris autrements
+$Stat = $PDO->prepare('INSERT INTO logement VALUES (NULL, :titre, :adresse, :ville, :cp, :surface, :prix, :photo,  :typee, :descriptif, )');
+
+
+
+
 
 
 $Stat->bindValue(':titre', $titre, PDO::PARAM_STR);
@@ -25,6 +40,7 @@ $Stat->bindValue(':typee', $typee, PDO::PARAM_STR);
 
 $Stat->bindValue(':descriptif', $descriptif, PDO::PARAM_STR);
 
+$Stat->execute();
 
 
 
@@ -36,9 +52,4 @@ $Stat->bindValue(':descriptif', $descriptif, PDO::PARAM_STR);
 
 
 
-
-
-
-
-?>
 ?>
