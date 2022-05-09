@@ -1,4 +1,4 @@
-<!-- <?php require_once "repoData.php";
+<?php require_once "repoData.php";
 
 //--------------------------------------------  READ -------------------------------------------------//
 
@@ -8,7 +8,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=immobilier', "root", ""); // connexi
 
 
 
-$prix = "Michel"; // recupére du formulaire
+$prix = ""; // recupére du formulaire
 
 $req  = $bdd->prepare("SELECT * FROM logement WHERE possesseur=:prix"); // la requete 
 
@@ -47,18 +47,11 @@ $req->closeCursor(); // coupe la connection avec la bdd
 <body>
 
 
-<!-- index.php -->
-<form method="post" action="submit_form.php">
- 
-<p>
-    On insèrera ici les éléments de notre formulaire.
-</p>
- 
-</form>
 
 
-        <!-- <form name="fo" method="post" action="" enctype="multipart/form-data" >
-        <input type="file"name="image"><br>
-         <input type="submit" name="valider" value="Télecharger" /> -->
+ 
+
+
+       
 </body>
 </html>
