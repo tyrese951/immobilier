@@ -1,29 +1,31 @@
-<?php require_once "database.php";
+<?php require_once "./partials/header.php"?>
+<?php
 
+$bdd = new PDO('mysql:host=localhost;dbname=immobilier','root','');
+$req  = $bdd->prepare("SELECT * FROM logement");
 
-
-
-
+$req->execute();
+$logements = $req->fetchAll(PDO::FETCH_ASSOC);
+$req->closeCursor();
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="FR">
-<head>
-<meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>immobilier</title>
-</head>
-<body>
-
-    <main class="container">
-
-     <h1 class="p-4 my-5 bg-dark text-danger text-center"> Formulaire d'inscription</h1>
-
-
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>immobilier</title>
+    </head>
+    <body>
+        
+        <main class="container">
+            
+            <h1 class="p-4 my-5 bg-dark text-danger text-center"> Formulaire d'inscription</h1>
+            
+            
         <table class="table table-hover text-center">
             <thead class="bg-info">
                 <tr>
@@ -40,7 +42,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($logements as $logement) : ?>
+                <?php foreach($logements as $logement) : ?>
                     <tr class="table">
                         <td> <?= $logement['id_logement'] ?></td>
                         <td> <?= $logement['titre'] ?></td>
@@ -53,12 +55,14 @@
                         <td> <?= $logement['type'] ?></td>
                         <td> <?= $logement['description'] ?></td>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-
-    </main>
-
-</body>
-
-</html>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            
+        </main>
+        
+        <?php require_once "./partials/footer.php"?>
+        
+    </body>
+    
+    </html>

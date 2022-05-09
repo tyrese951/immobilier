@@ -9,9 +9,5 @@ $req->closeCursor();
 
 
 
-
-
-
-
 ?>
 
