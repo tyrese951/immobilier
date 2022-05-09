@@ -38,7 +38,7 @@ $req->closeCursor();
                     <th scope="col">prix</th>
                     <th scope="col">photo</th>
                     <th scope="col">type</th>
-                    <th scope="col">description</th>
+                    <th scope="col">descriptif</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,8 +52,8 @@ $req->closeCursor();
                         <td> <?= $logement['surface'] ?></td>
                         <td> <?= $logement['prix'] ?></td>
                         <td> <?= $logement['photo'] ?></td>
-                        <td> <?= $logement['type'] ?></td>
-                        <td> <?= $logement['description'] ?></td>
+                        <td> <?= $logement['typee'] ?></td>
+                        <td> <?= $logement['descriptif'] ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

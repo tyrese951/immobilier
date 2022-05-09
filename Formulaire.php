@@ -10,10 +10,11 @@
     </head>
     <body>
         <div class="container text-center">
-        <h1>Formulaire d'inscription</h1>
+            <h1>Formulaire d'inscription</h1>
+            
+            <form action="traitement.php" method="post">
 
-
-        <form>
+        
   <div class="form-group">
     <label for="id">Logement</label>
     <input type="text" class="form-control" id="id" placeholder="Type du logement">
@@ -44,23 +45,16 @@
     <input type="text" class="form-control" id="Prix" placeholder="Prix du bien">
   </div>
 
+
+
   <div class="form-group">
-    <label for="Prix">Prix</label>
-    <input type="text" class="form-control" id="Prix" placeholder="Prix du bien">
+    <label for="descriptif">descriptif</label>
+    <input type="text" class="form-control" id="descriptif" placeholder="Volume habitable">
   </div>
 
 
 
 
-  <div class="form-group">
-    <label for="description">description</label>
-    <input type="text" class="form-control" id="description" placeholder="Volume habitable">
-  </div>
-
-
-
-
-        <form action="xss.php" method="post">
            
 
            
