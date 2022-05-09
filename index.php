@@ -1,37 +1,11 @@
-<?php require_once "repoData.php";
-
-//--------------------------------------------  READ -------------------------------------------------//
-
-
-
-$bdd = new PDO('mysql:host=localhost;dbname=immobilier', "root", ""); // connexion à la BDD
-
-
-
-$prix = ""; // recupére du formulaire
-
-$req  = $bdd->prepare("SELECT * FROM logement WHERE possesseur=:prix"); // la requete 
-
-$req->bindValue('username', $prix, PDO::PARAM_STR); // PDO pour une double secrite avant d'envoyer les données à la BDD.
-
-$req->execute(); // envoi et exécution en BDD 
-
-
-$logement = $req->fetchAll(PDO::FETCH_ASSOC); // Recupere les datas de la req on met dans un tableau
-
-// FETCH_ASSOC= Récuperer les informations en tableau associatid
-
-$req->closeCursor(); // coupe la connection avec la bdd 
-
-//var_dump($myGames); // verifie qu'on a bien notre resultat !
-
-?> -->
+<?php require_once "database.php";
 
 
 
 
 
 
+?>
 
 
 <!DOCTYPE html>
@@ -44,7 +18,49 @@ $req->closeCursor(); // coupe la connection avec la bdd
     <title>immobilier</title>
 </head>
 <body>
-<body>
+
+    <main class="container">
+
+     <h1 class="p-4 my-5 bg-dark text-danger text-center"> Formulaire d'inscription</h1>
+
+
+        <table class="table table-hover text-center">
+            <thead class="bg-info">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">titre</th>
+                    <th scope="col">adresse</th>
+                    <th scope="col">ville</th>
+                    <th scope="col">cp</th>
+                    <th scope="col">surface</th>
+                    <th scope="col">prix</th>
+                    <th scope="col">photo</th>
+                    <th scope="col">type</th>
+                    <th scope="col">description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($logements as $logement) : ?>
+                    <tr class="table">
+                        <td> <?= $logement['ID'] ?></td>
+                        <td> <?= $logement['titre'] ?></td>
+                        <td> <?= $logement['adresse'] ?></td>
+                        <td> <?= $logement['ville'] ?></td>
+                        <td> <?= $logement['cp'] ?></td>
+                        <td> <?= $logement['surface'] ?></td>
+                        <td> <?= $logement['prix'] ?></td>
+                        <td> <?= $logement['photo'] ?></td>
+                        <td> <?= $logement['type'] ?></td>
+                        <td> <?= $logement['description'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+
 
 
 
@@ -53,5 +69,5 @@ $req->closeCursor(); // coupe la connection avec la bdd
 
 
        
-</body>
+
 </html>
