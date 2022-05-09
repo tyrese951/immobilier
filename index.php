@@ -42,7 +42,7 @@
             <tbody>
                 <?php foreach ($logements as $logement) : ?>
                     <tr class="table">
-                        <td> <?= $logement['ID'] ?></td>
+                        <td> <?= $logement['id_logement'] ?></td>
                         <td> <?= $logement['titre'] ?></td>
                         <td> <?= $logement['adresse'] ?></td>
                         <td> <?= $logement['ville'] ?></td>
@@ -60,14 +60,5 @@
     </main>
 
 </body>
-
-
-
-
-
- 
-
-
-       
 
 </html>
