@@ -1,7 +1,19 @@
 <?php
 
+$logement = 
+    [
+       "namelog" => "",
+       "titre" => "",
+       "adresse" => "./assets/img/drivers/lewis.jpg",
+       "ville" => "",
+       "cp" => "";
+       "surface" => "m/m",
+       "prix" => "",
+       "photo" => "";
+       "type" => "",
+       "titre" => "",
+       
+       
+    ];
 
-$bdd = new PDO('mysql:host=localhost;dbname=immobilier', "root", ""); // connexion à la BDD
 
-
-?>
